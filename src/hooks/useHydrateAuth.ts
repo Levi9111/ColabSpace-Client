@@ -14,7 +14,7 @@ export const useHydrateAuth = () => {
         const result = await axios.get('/auth/login/refresh-token', {
           withCredentials: true,
         });
-
+        console.log('Hydration Hook Result ' + result);
         dispatch(setAccessToken(result.data.accessToken));
       } catch {
         console.log('Session expired or not logged in');
