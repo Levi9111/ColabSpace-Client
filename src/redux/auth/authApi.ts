@@ -26,6 +26,30 @@ export const authApi = baseApi.injectEndpoints({
         method: 'POST',
       }),
     }),
+
+    register: builder.mutation({
+      query: (data: { email: string; password: string }) => ({
+        url: '/auth/register',
+        mehtod: 'POST',
+        body: data,
+      }),
+    }),
+
+    generateOtp: builder.mutation({
+      query: (data: { email: string }) => ({
+        url: '/auth/generate-otp',
+        method: 'POST',
+        body: data,
+      }),
+    }),
+
+    verifyOtp: builder.mutation({
+      query: (data: { email: string; otp: string }) => ({
+        url: '/auth/verify-otp',
+        method: 'POST',
+        body: data,
+      }),
+    }),
   }),
 });
 
