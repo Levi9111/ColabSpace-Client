@@ -30,7 +30,7 @@ export const authApi = baseApi.injectEndpoints({
     register: builder.mutation({
       query: (data: { email: string; password: string }) => ({
         url: '/auth/register',
-        mehtod: 'POST',
+        method: 'POST',
         body: data,
       }),
     }),
@@ -58,4 +58,8 @@ export const {
   useRefreshTokenQuery,
   useGetMeQuery,
   useLogoutMutation,
+
+  useRegisterMutation,
+  useGenerateOtpMutation,
+  useVerifyOtpMutation,
 } = authApi;
